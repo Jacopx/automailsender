@@ -36,16 +36,16 @@ or
 python definemailsend.py
 ```
 
-### How it works?
+# How it works?
 
 This script use the SMTP library, datetime and time library.
-# mailsend.py
+### mailsend.py
   This Python ask the user input for the main part of the message, the sender account, destinator, message, ecc... The time camps are verified, the minutes can't be higher than 59, ecc...
   While the cycle wait until the right send time print the 'Not yet send...' message, when it start if everything is okay will print a confirmation output in case of fail it will active the force mode that try to send the message until it works (20 times for second).
-# definemailsend.py
+### definemailsend.py
   This Python don't ask anything to the user and it will not verify the input (check the time).
   While the cycle wait until the right send time print the 'Not yet send...' message, when it start if everything is okay will print a confirmation output in case of fail it will active the force mode that try to send the message until it works (20 times for second).
-
+### Output Example
 ```
 Choose the send time
 Hours: 10
