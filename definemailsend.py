@@ -2,18 +2,27 @@ import smtplib
 import datetime
 import time
 
-hs = 0 # SELECT THE HOUR
-ts = 0 
-ss = 0
+hs = 14 # SELECT THE HOUR
+ts = 11
+ss = 50
+
+# Account for send
+username = 'sender@gmail.com'
+password = 'password'
+
+try:
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login(username, password)
+    print 'CORRECT LOGIN!'
+except:
+    print 'Wrong login, change parameters!'
+    raise SystemExit
 
 print 'The message will be sent at: %s:%s.%s' % (hs,ts,ss)
 
-# Account for send
-username = 'example@gmail.com'
-password = 'password'
-
 # Destination, Subject and Text
-TO = 'dest@gmail.com'
+TO = 'dest.example@gmail.com'
 SUBJECT = 'Subject example'
 TEXT = 'Text example'
 # Merging message
@@ -27,10 +36,7 @@ while True:
     if isnow.hour == hs and isnow.minute == ts and isnow.second == ss or force == True:
         hold = datetime.datetime.now()
         try: # try to send
-            server = smtplib.SMTP('smtp.gmail.com:587')
-            server.starttls()
-            server.login(username, password)
-            server.sendmail(FROM, TO, MSG)
+            server.sendmail(username, TO, MSG)
             server.quit()
             issent = datetime.datetime.now()
             delay = issent - hold

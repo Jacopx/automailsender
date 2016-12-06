@@ -17,10 +17,17 @@ while ss>59 or ss<0:
 
 print 'The message will be sent at: %s:%s.%s' % (hs,ts,ss)
 
-# Account for send
-username = raw_input('Sender mail (omit @gmail.com): ')
-username = '%s@gmail.com' % (username)
-password = raw_input('Password for ' + username +  ': ')
+while True:
+    try:
+        username = raw_input('Sender mail (omit @gmail.com): ')
+        username = '%s@gmail.com' % (username)
+        password = raw_input('Password for ' + username +  ': ')
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.starttls()
+        server.login(username, password)
+        break
+    except:
+        print 'Wrong login, retry:'
 
 # Destination, Subject and Text
 TO = raw_input('Destinator: ')
@@ -37,10 +44,7 @@ while True:
     if isnow.hour == hs and isnow.minute == ts and isnow.second == ss or force == True:
         hold = datetime.datetime.now()
         try: # try to send
-            server = smtplib.SMTP('smtp.gmail.com:587')
-            server.starttls()
-            server.login(username, password)
-            server.sendmail(FROM, TO, MSG)
+            server.sendmail(username, TO, MSG)
             server.quit()
             issent = datetime.datetime.now()
             delay = issent - hold
