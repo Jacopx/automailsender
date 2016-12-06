@@ -2,9 +2,9 @@ import smtplib
 import datetime
 import time
 
-hs = 14 # SELECT THE HOUR
-ts = 11
-ss = 50
+hs = 0 # SELECT THE HOUR
+ts = 0
+ss = 0
 
 # Account for send
 username = 'sender@gmail.com'
