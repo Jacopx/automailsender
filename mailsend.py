@@ -1,6 +1,7 @@
 import smtplib
 import datetime
 import time
+import getpass
 
 hs=-1
 ts=-1
@@ -21,13 +22,18 @@ while True:
     try:
         username = raw_input('Sender mail (omit @gmail.com): ')
         username = '%s@gmail.com' % (username)
-        password = raw_input('Password for ' + username +  ': ')
+        password = getpass.getpass('Password for ' + username +  ': ')
+        # password = raw_input('Password for ' + username +  ': ')
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
         server.login(username, password)
         break
     except:
         print 'Wrong login, retry:'
+
+print '*-*-*-*-*-*-*-*-*'
+print '| Correct login |'
+print '*-*-*-*-*-*-*-*-*'
 
 # Destination, Subject and Text
 TO = raw_input('Destinator: ')
@@ -48,9 +54,9 @@ while True:
             server.quit()
             issent = datetime.datetime.now()
             delay = issent - hold
-            print '-------------------------------------------------------------------'
-            print 'Successfully sent the mail at %s:%s.%s with %s of delay' % (isnow.hour, isnow.minute, isnow.second, delay)
-            print '-------------------------------------------------------------------\n'
+            print '*-------------------------------------------------------------------*'
+            print '| Successfully sent the mail at %s:%s.%s with %s of delay |' % (isnow.hour, isnow.minute, isnow.second, delay)
+            print '*-------------------------------------------------------------------*\n'
             break
         except: # force mode in case of fail to send
             print 'Failed to send mail from %s at %s:%s.%s\n FORCE SEND ACTIVATED!' % (username, isnow.hour, isnow.minute, isnow.second)
