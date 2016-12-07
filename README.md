@@ -58,9 +58,7 @@ Password for jacopo.nasi@gmail.com: [encrypt simbol]
 *---------------*
 Destinator: jacopo.nasi@gmail.com
 Subject: prova
-Text: provaprint '*---------------*'
-print '| Correct login |'
-print '*---------------*'
+Text: prova
 Not yet sended, is 10:14.7
 Not yet sended, is 10:14.7
 Not yet sended, is 10:14.8
