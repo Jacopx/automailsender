@@ -40,9 +40,9 @@ while True:
             server.quit()
             issent = datetime.datetime.now()
             delay = issent - hold
-            print '*-------------------------------------------------------------------*'
-            print '| Successfully sent the mail at %s:%s.%s with %s of delay |' % (isnow.hour, isnow.minute, isnow.second, delay)
-            print '*-------------------------------------------------------------------*\n'
+            print '*--------------------------------------------------------------------*'
+            print '| Successfully sent the mail at %s:%s.%s with %s s of delay |' % (isnow.hour, isnow.minute, isnow.second, delay)
+            print '*--------------------------------------------------------------------*\n'
             break
         except: # force mode in case of fail to send
             print 'Failed to send mail from %s at %s:%s.%s\n FORCE SEND ACTIVATED!' % (username, isnow.hour, isnow.minute, isnow.second)
