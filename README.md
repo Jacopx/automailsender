@@ -54,17 +54,22 @@ Minute: 14
 Second: 10
 The message will be sent at: 10:13.59
 Sender mail (omit @gmail.com): jacopo.nasi
-Password for jacopo.nasi@gmail.com: ......
+Password for jacopo.nasi@gmail.com: [encrypt simbol]
+*---------------*
+| Correct login |
+*---------------*
 Destinator: jacopo.nasi@gmail.com
 Subject: prova
-Text: prova
+Text: provaprint '*---------------*'
+print '| Correct login |'
+print '*---------------*'
 Not yet sended, is 10:14.7
 Not yet sended, is 10:14.7
 Not yet sended, is 10:14.8
 ...
--------------------------------------------------------------------
-Successfully sent the mail at 10:14.10 with 1.029383 of delay'
--------------------------------------------------------------------
+*-----------------------------------------------------------------*
+| Successfully sent the mail at 10:14.10 with 0.102677 s of delay |
+*-----------------------------------------------------------------*
 ```
 
 ## Built With
