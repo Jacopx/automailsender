@@ -40,7 +40,8 @@ python definemailsend.py
 
 This script use the SMTP library, datetime and time library.
 ### mailsend.py
-  This Python ask the user input for the of the sender account and check if it's work, if not re-ask the data. After that the time camps are verified, the minutes can't be higher than 59, ecc...
+  This Python ask the user input (with the classic UNIX encryption view for the passoword) of the of the sender account and check if it's work, if not re-ask the data. After that the time camps are verified, the minutes can't be higher than 59, ecc...
+
   While the cycle wait until the right send time print the 'Not yet send...' message, when it start if everything is okay will print a confirmation output in case of fail it will active the force mode that try to send the message until it works (20 times for second).
 ### definemailsend.py
   This Python don't ask anything to the user and it will not verify the input of the user a part from the account information and if they are wrong stop the execution.
