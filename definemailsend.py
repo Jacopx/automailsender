@@ -14,19 +14,19 @@ try:
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username, password)
-    print 'CORRECT LOGIN!'
+    print ('CORRECT LOGIN!')
 except:
-    print 'Wrong login, change parameters!'
+    print ('Wrong login, change parameters!')
     raise SystemExit
 
-print 'The message will be sent at: %s:%s.%s' % (hs,ts,ss)
+print ('The message will be sent at: %s:%s.%s' % (hs,ts,ss))
 
 # Destination, Subject and Text
 TO = 'dest.example@gmail.com'
 SUBJECT = 'Subject example'
 TEXT = 'Text example'
 # Merging message
-MSG = """From: %s\nTo: %s\nSubject: %s\n\n%s """ % (username, TO, SUBJECT, TEXT)
+MSG = ("""From: {0}\nTo: {1}\nSubject: {2}\n\n{3} """.format(username, TO, SUBJECT, TEXT))
 
 force=False
 
@@ -40,13 +40,13 @@ while True:
             server.quit()
             issent = datetime.datetime.now()
             delay = issent - hold
-            print '*--------------------------------------------------------------------*'
-            print '| Successfully sent the mail at %s:%s.%s with %s s of delay |' % (isnow.hour, isnow.minute, isnow.second, delay)
-            print '*--------------------------------------------------------------------*\n'
+            print ('*--------------------------------------------------------------------*')
+            print ('| Successfully sent the mail at {0}:{1}.{2} with {3} s of delay |'.format(isnow.hour, isnow.minute, isnow.second, delay))
+            print ('*--------------------------------------------------------------------*\n')
             break
         except: # force mode in case of fail to send
-            print 'Failed to send mail from %s at %s:%s.%s\n FORCE SEND ACTIVATED!' % (username, isnow.hour, isnow.minute, isnow.second)
+            print ('Failed to send mail from {0} at {1}:{2}.{3}\n FORCE SEND ACTIVATED!'.format(username, isnow.hour, isnow.minute, isnow.second))
             force=True
     else: # waiting for the right time
-        print 'Not yet sended, is %s:%s.%s' % (isnow.hour, isnow.minute, isnow.second)
+        print ('Not yet sended, is {0}:{1}.{2}'.format(isnow.hour, isnow.minute, isnow.second))
         time.sleep(0.05)
