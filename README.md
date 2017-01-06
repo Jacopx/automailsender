@@ -1,6 +1,7 @@
 # Automatic Python Mail Sender
 
 A little script for send in a choose time (with less than 1s of delay) the mail that you want. There is a brute force mode in case of failing after the first try. Useful for automatic Jobs, you can run it in FreeBSD or with Automator in macOS for example.
+The script is now compatible with Python 3.x.
 
 ## Getting Started
 
