@@ -19,7 +19,7 @@ except:
     print ('Wrong login, change parameters!')
     raise SystemExit
 
-print ('The message will be sent at: %s:%s.%s' % (hs,ts,ss))
+print ('The message will be sent at: {0}:{1}.{2}'.format(hs,ts,ss))
 
 # Destination, Subject and Text
 TO = 'dest.example@gmail.com'
