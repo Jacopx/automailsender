@@ -19,10 +19,10 @@ while ss>59 or ss<0:
 print ('The message will be sent at: {0}:{1}.{2}'.format(hs,ts,ss))
 
 while True:
+    username = input('Sender mail (omit @gmail.com): ')
+    username = ('%s@gmail.com' % username)
+    password = getpass.getpass('Password for ' + username +  ': ')
     try:
-        username = input('Sender mail (omit @gmail.com): ')
-        username = ('%s@gmail.com' % username)
-        password = getpass.getpass('Password for ' + username +  ': ')
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
         server.login(username, password)
